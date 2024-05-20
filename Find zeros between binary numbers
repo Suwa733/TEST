@@ -1,0 +1,24 @@
+public int solution(int N) 
+{
+    var str = Convert.ToString(N,2);
+        
+    var MaxNum = 0;
+    var CntNum = 0;
+
+    foreach(var index in str){
+        if(index == '0')
+        {
+            CntNum++;
+            continue;
+        }
+        else
+        {
+            if(MaxNum < CntNum)
+                MaxNum = CntNum;
+
+            CntNum = 0;
+        }
+    }
+
+    return MaxNum;
+}
